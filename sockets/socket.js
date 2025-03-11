@@ -9,7 +9,6 @@ bands.addBand( new Band('Bon Jovi') );
 bands.addBand( new Band('Heroes del silencio') );
 bands.addBand( new Band('Metallica') );
 
-console.log(bands);
 
 // Mensajes de sockets
 io.on('connection', client => {
@@ -21,11 +20,11 @@ io.on('connection', client => {
         console.log('Cliente desconectado');
     });
 
-    client.on('mensaje', (payload) => {
-        console.log('Mensaje!!!', payload);
+    // client.on('mensaje', (payload) => {
+    //     console.log('Mensaje!!!', payload);
 
-        io.emit('mensaje', { admin: 'Nuevo mensaje'});
-    });
+    //     io.emit('mensaje', { admin: 'Nuevo mensaje'});
+    // });
 
     client.on('vote-band', (payload) => {
         console.log(payload);
